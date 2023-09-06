@@ -1,9 +1,9 @@
-import React, { Children } from 'react'
+import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import './index.css'
-import { createBrowserRouter, RouterProvider, Navigate } from 'react-router-dom'
-import Home from './routes/Home/Index.jsx'
+import {createBrowserRouter, RouterProvider, Navigate} from 'react-router-dom'
+import Home from './routes/Home/index.jsx'
 import Produtos from './routes/Produtos/index.jsx'
 import Error from './routes/Error/index.jsx'
 import EditarProduto from './routes/EditarProdutos/index.jsx'
@@ -22,14 +22,14 @@ const router = createBrowserRouter([
     children:[
       {
         path: "/",
-        element: <Home/>,
+        element: <Home/>
       },
       {
         path: "/produtos",
         element: <Produtos/>
       },
       {
-        path: "produtos/editar/:id",
+        path: "/produtos/editar/:id",
         element: <EditarProduto/>
       },
       {
@@ -42,6 +42,6 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
-  </React.StrictMode>
+     <RouterProvider router={router} />
+  </React.StrictMode>,
 )
